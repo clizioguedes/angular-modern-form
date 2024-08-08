@@ -1,0 +1,25 @@
+<form [formGroup]="userForm">
+  <div>
+    <label for="name">Name</label>
+    <input type="text" formControlName="name" />
+    @if (isInvalidField('name')) {
+    <span>{{ userForm | formErrorMessage : "name" }}</span>
+    }
+  </div>
+
+  <div>
+    <label for="email">Email</label>
+    <input type="text" formControlName="email" />
+    @if (isInvalidField('email')) {
+    <span>{{ userForm | formErrorMessage : "email" }}</span>
+    }
+  </div>
+
+  <div>
+    <label for="password">Password</label>
+    <input type="text" formControlName="password" />
+    @if (isInvalidField('password')) {
+    <span>{{ userForm | formErrorMessage : "password" }}</span>
+    }
+  </div>
+</form>
